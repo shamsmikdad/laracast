@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\post;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -12,7 +13,24 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+ Route::get('/',function(){
+    return view ('Posts',[
+      'posts'=> Post::all()
+    ]);
+ });
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/post/{id}',function($id){
+//    return view('post',[
+//       'post'=>Post::find($id)
+//    ]);
+// });
+
+Route::get('/post/{post:slug}',function(Post $post){ //Post::where('slug' , $post)->firstOrfail()
+      return view('post',[
+         'post'=>$post
+      ]);
+   });
+   
+
+
+ 
