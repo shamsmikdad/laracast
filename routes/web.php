@@ -25,7 +25,8 @@ use Illuminate\Support\Facades\Route;
 //    ]);
 // });
 
-Route::get('/post/{post:slug}',function(Post $post){ //Post::where('slug' , $post)->firstOrfail()
+Route::get('/post/{post:slug}',function(Post $post){ 
+   //Post::where('slug' , $post)->firstOrfail()
       return view('post',[
          'post'=>$post
       ]);
