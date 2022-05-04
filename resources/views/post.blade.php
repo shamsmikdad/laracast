@@ -23,19 +23,23 @@
     <body class="antialiased">
         <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
             
-                <div class="mt-8 bg-white dark:bg-gray-800 overflow-hidden shadow sm:rounded-lg">
+                <div class="mt-8 bg-white white:bg-white-800 overflow-hidden shadow sm:rounded-lg">
                     <div class="grid grid-cols-1 md:grid-cols-2">
                         <div class="p-6">
                                 <p>
                                     {{$post->title}}
                                 </p>
-                                <a href="/post/{{$post->id}}">{!!$post->title!!}</a>
+                                <a href="#">Written By {!!$post->user->name!!}</a>
                                 <p>
                                     {{$post->body}}
                                 </p>
+                                <a href="/">Back Home</a>   
                         </div>
                     </div>
-                </div>    
+                </div>
+
+                 
         </div>
+        
     </body>
 </html>
